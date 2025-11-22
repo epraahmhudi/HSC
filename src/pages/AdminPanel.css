@@ -1,0 +1,133 @@
+/* ====== Dashboard Layout ====== */
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f8fc;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ====== Sidebar ====== */
+.admin-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #0077ff, #010e42);
+  color: white;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-sidebar h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.admin-sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.admin-sidebar li:hover {
+  background: white;
+  color: #0d6efd;
+  transform: translateX(5px);
+}
+
+.admin-sidebar .logout {
+  margin-top: auto;
+  background: #dc3545;
+}
+
+.admin-sidebar .logout:hover {
+  background: #b02a37;
+  color: white;
+}
+
+/* ====== Main Content ====== */
+.admin-content {
+  flex: 1;
+  padding: 60px 50px;
+}
+
+.admin-content h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.admin-content p {
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 15px;
+}
+
+/* ====== Cards Grid ====== */
+.admin-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.admin-card {
+  background: white;
+  border-radius: 18px;
+  padding: 35px 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a subtle gradient effect when hovering */
+.admin-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #0d6efd, #6c63ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.admin-card:hover::before {
+  opacity: 1;
+}
+
+/* ====== Card Titles ====== */
+.admin-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.admin-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}

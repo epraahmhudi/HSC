@@ -1,0 +1,279 @@
+/* Navbar container */
+.navbar {
+  background: linear-gradient(90deg, #0369a1, #0ea5e9, #38bdf8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.324);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 15px;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  padding-bottom: 1rem; /* space for loading bar and text */
+}
+
+/* Inner wrapper */
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Logo section */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: white;
+  padding: 3px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.nav-logo-text {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo-text:hover {
+  transform: scale(1.05);
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #f9fafb;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Hover effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+  color: #fafdff;
+  transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.nav-links a.active {
+  background: rgba(13, 162, 249, 0.15);
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.438);
+}
+
+/* Loading & status container */
+.nav-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.75rem;
+  gap: 0.5rem;
+}
+
+/* Loading bar wrapper */
+.loading-bar {
+  width: 200px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Loading progress */
+.loading-progress {
+  width: 0;
+  height: 100%;
+  background: #ffffff;
+  animation: loading 3s infinite linear;
+  border-radius: 10px;
+}
+
+/* Loading animation */
+@keyframes loading {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+
+/* Status text */
+.status-text {
+  display: flex;
+  gap: 1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.status-text span {
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+
+  .nav-status .loading-bar {
+    width: 150px; /* smaller on mobile */
+  }
+
+  .status-text {
+    font-size: 0.75rem;
+    gap: 0.5rem;
+  }
+}
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: rgba(139, 0, 0, 0.26);
+}
+/* Login button */
+.login-btn {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Admin Panel button */
+.admin-btn {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.admin-btn:hover {
+  background: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Logout button */
+.logout-btn {
+  background: rgba(255, 59, 59, 0.85);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(255, 59, 59, 0.3);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 59, 59, 1);
+  transform: translateY(-2px);
+}
+
+/* Button styled like nav links (for Add User button) */
+.nav-link-button {
+  color: #f9fafb;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 10px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Hover effect for button (matches nav links) */
+.nav-link-button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link-button:hover {
+  color: #fafdff;
+  transform: translateY(-2px);
+}
+
+.nav-link-button:hover::after {
+  width: 100%;
+}

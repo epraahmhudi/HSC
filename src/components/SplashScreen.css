@@ -1,0 +1,206 @@
+/* === MODERN SPLASH SCREEN === */
+.splash {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  height: 100vh;
+  width: 100%;
+  /* Match navbar blue gradient */
+  background: linear-gradient(90deg, #069ef0, #0ea5e9, #00bdfc);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.8s ease-out;
+}
+
+/* Animated background overlay */
+.splash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  z-index: 0;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+/* Fade out animation */
+.fade-out {
+  opacity: 0;
+}
+
+/* Centered content */
+.splash-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Glassmorphism card */
+.splash-card {
+  padding: 40px 70px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main title */
+.main-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% { 
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+                 0 0 40px rgba(255, 255, 255, 0.1);
+  }
+  50% { 
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+                 0 0 60px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Tagline */
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 60px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-out 0.3s both;
+}
+
+/* Loader */
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255, 255, 255, 0.25);
+  border-top: 5px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1.3s linear infinite;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+/* Bottom footer */
+.splash-footer {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: fadeIn 2s ease-out 0.6s both;
+}
+
+.powered-by {
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .splash-card {
+    padding: 28px 32px;
+  }
+
+  .main-title {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+
+  .loader {
+    width: 45px;
+    height: 45px;
+    border-width: 4px;
+  }
+
+  .powered-by {
+    font-size: 0.8rem;
+  }
+
+  .splash-footer {
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .splash-card {
+    padding: 24px 20px;
+  }
+
+  .main-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    padding: 0 20px;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+    padding: 0 20px;
+  }
+}

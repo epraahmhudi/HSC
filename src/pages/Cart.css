@@ -1,0 +1,159 @@
+/* PAGE FADE */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* EMPTY CART */
+.cart-empty {
+  text-align: center;
+  padding: 60px;
+}
+
+.btn-go-shop {
+  padding: 10px 18px;
+  background: #008cff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* WRAPPER */
+.cart-wrapper {
+  padding: 30px;
+}
+
+.cart-page-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* GRID LAYOUT */
+.cart-grid {
+  display: flex;
+  gap: 25px;
+}
+
+/* LEFT SIDE LIST */
+.cart-list {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* CART CARD */
+.cart-card {
+  display: flex;
+  gap: 18px;
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.cart-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cart-desc {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.cart-price {
+  color: #009dff;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* QTY BUTTONS */
+.qty-control {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.qty-control button {
+  padding: 4px 10px;
+  background: #ddd;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.qty-control span {
+  font-size: 16px;
+}
+
+/* REMOVE */
+.remove-btn {
+  margin-top: 10px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* RIGHT SIDE SUMMARY */
+.cart-summary-box {
+  flex: 1;
+  height: fit-content;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.summary-total {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+/* CHECKOUT */
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #0095ff, #008cff);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+/* CLEAR */
+.clear-cart-btn {
+  width: 100%;
+  background: #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
