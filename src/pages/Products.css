@@ -35,7 +35,7 @@
 .product-card {
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.397);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.594);
   padding: 25px 20px;
   width: 260px;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
